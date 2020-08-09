@@ -111,6 +111,7 @@ def get_pvalue(hist, bin_edges, score):
 def run_mutual(input_matrix, geneList, clsList, bin_num):
 	ret_lines = []
 	hist, bin_edges = rand_permut(clsList, bin_num)
+	dv = []
 	for li in range(len(input_matrix)):
 		values = input_matrix[li]
 		id = geneList[li]
@@ -118,6 +119,7 @@ def run_mutual(input_matrix, geneList, clsList, bin_num):
 		score = mi(clsList, disc_values)
 		pvalue = get_pvalue(hist, bin_edges, score)
 		ret_lines += [(id, score, pvalue)]
+	print(dv)
 
 	return ret_lines
 
